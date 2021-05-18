@@ -17,11 +17,11 @@
 - 리팩토링하면서 필요한 테스트 목록을 하나씩 추가하면서 완성한다.
 
 ## 우아한 테크 세미나 TDD 리팩토링 - 박재성님
-[Slide][https://www.slideshare.net/OKJSP/okkycon-tdd]
+[Slide](https://www.slideshare.net/OKJSP/okkycon-tdd)
 
 ## 객체지향 생활체조 정리
-[소트웍스 앤솔러지][https://developerfarm.wordpress.com/2012/02/03/object_calisthenics_summary/]
+[소트웍스 앤솔러지](https://developerfarm.wordpress.com/2012/02/03/object_calisthenics_summary/)
 
 
 # 첫번째 장난감 프로젝트 - Lotto
-[구현 과정][/docs/lotto/process]
+[구현 과정](./docs/lotto/process.md)
