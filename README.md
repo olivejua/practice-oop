@@ -23,4 +23,5 @@
 [소트웍스 앤솔러지][https://developerfarm.wordpress.com/2012/02/03/object_calisthenics_summary/]
 
 
-# 첫번째 장난감 프로젝트 - calculator
+# 첫번째 장난감 프로젝트 - Lotto
+[구현 과정][/docs/lotto/process]
