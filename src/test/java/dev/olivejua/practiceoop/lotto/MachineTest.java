@@ -4,7 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,15 +11,16 @@ import static org.junit.jupiter.api.Assertions.*;
 public class MachineTest {
 
     private Machine machine;
+    private int sizeOfBalls;
 
     @BeforeEach
     void setup() {
         machine = new Machine();
+        sizeOfBalls = 45;
     }
 
     @Test
     void putBalls() {
-        int sizeOfBalls = 45;
         machine.putBalls(sizeOfBalls);
         List<Integer> balls = machine.balls;
 
@@ -29,7 +29,6 @@ public class MachineTest {
 
     @Test
     void notEqualBallsBeforeMixing() {
-        int sizeOfBalls = 45;
         machine.putBalls(sizeOfBalls);
 
         List<Integer> expectedBalls = new ArrayList<>();
@@ -42,7 +41,6 @@ public class MachineTest {
 
     @Test
     void mixBalls() {
-        int sizeOfBalls = 45;
         machine.putBalls(sizeOfBalls);
         machine.mixBalls();
 
@@ -52,6 +50,16 @@ public class MachineTest {
         }
 
         assertFalse(equalsBalls(expectedBalls, machine.balls));
+    }
+
+    @Test
+    void pickWinningNumber() {
+        machine.putBalls(sizeOfBalls);
+        machine.mixBalls();
+        int winningNumber = machine.pickWinningNumber();
+
+        assertTrue(0<winningNumber);
+        assertTrue(winningNumber<46);
     }
 
     private boolean equalsBalls(List<Integer> expected, List<Integer> actual) {

@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Machine {
+    private final int sizeOfWinningBalls = 6;
     List<Integer> balls = new ArrayList<>();
 
     public void putBalls(int sizeOfBalls) {
@@ -16,5 +17,9 @@ public class Machine {
 
     public void mixBalls() {
         Collections.shuffle(balls);
+    }
+
+    public int pickWinningNumber() {
+        return balls.remove(0);
     }
 }
