@@ -1,19 +1,19 @@
 package dev.olivejua.practiceoop.lotto;
 
-public enum LottoRule {
-    AllTheNumbers("AlltheNumbers", 45),
-    WinningNumbers("WinningNumbers", 6),
-    BonusNumbers("BonusNumbers", 1);
+public class LottoRule {
+    enum SizeOfNumbers {
+        Total(45),
+        Winning(6),
+        Bonus(1);
 
-    private String sizeOf;
-    private int size;
+        private final int SIZE;
 
-    LottoRule(String sizeOf, int size) {
-        this.sizeOf = sizeOf;
-        this.size = size;
-    }
+        SizeOfNumbers(int size) {
+            this.SIZE = size;
+        }
 
-    public int getSize() {
-        return this.size;
+        public int getSize() {
+            return this.SIZE;
+        }
     }
 }

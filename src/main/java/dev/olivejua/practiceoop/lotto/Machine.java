@@ -7,20 +7,25 @@ import java.util.List;
 public class Machine {
     private List<Integer> balls = new ArrayList<>();
 
-    public List<Integer> getWinningNumbers() {
+    public WinningNumber getWinningNumber() {
+        // 숫자들을 기계에 넣는다.
         putBalls();
         mixBalls();
 
-        List<Integer> winningNumbers = new ArrayList<>();
-        for (int i=0; i<LottoRule.WinningNumbers.getSize(); i++) {
-            winningNumbers.add(extractWinningNumber());
+        // 당첨번호를 구한다.
+        int[] winningNumbers = new int[LottoRule.SizeOfNumbers.Winning.getSize()];
+        for (int i = 0; i< winningNumbers.length; i++) {
+            winningNumbers[i] = extractNumber();
         }
 
-        return winningNumbers;
+        // 보너스 번호를 구한다.
+        int bonusNumber = extractNumber();
+
+        return new WinningNumber(winningNumbers, bonusNumber);
     }
 
     private void putBalls() {
-        for (int i=1; i<=LottoRule.AllTheNumbers.getSize(); i++) {
+        for (int i = 1; i<= LottoRule.SizeOfNumbers.Total.getSize(); i++) {
             balls.add(i);
         }
     }
@@ -29,7 +34,7 @@ public class Machine {
         Collections.shuffle(balls);
     }
 
-    private int extractWinningNumber() {
+    private int extractNumber() {
         return balls.remove(0);
     }
 }

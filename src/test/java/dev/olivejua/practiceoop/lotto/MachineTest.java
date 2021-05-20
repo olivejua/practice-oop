@@ -9,11 +9,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MachineTest {
 
     @Test
-    void extractWinningNumber() {
+    void getWinningNumber() {
         Machine machine = new Machine();
-        List<Integer> winningNumbers = machine.getWinningNumbers();
+        WinningNumber winningNumber = machine.getWinningNumber();
 
-        assertEquals(LottoRule.WinningNumbers.getSize(), winningNumbers.size());
+        assertEquals(LottoRule.SizeOfNumbers.Winning.getSize(), winningNumber.getRegular().length);
     }
 
     private boolean equalsBalls(List<Integer> expected, List<Integer> actual) {
