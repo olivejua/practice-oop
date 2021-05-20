@@ -1,25 +1,35 @@
 package dev.olivejua.practiceoop.lotto;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class Machine {
-    private final int sizeOfWinningBalls = 6;
-    List<Integer> balls = new ArrayList<>();
+    private List<Integer> balls = new ArrayList<>();
 
-    public void putBalls(int sizeOfBalls) {
-        for (int i=1; i<=sizeOfBalls; i++) {
+    public List<Integer> getWinningNumbers() {
+        putBalls();
+        mixBalls();
+
+        List<Integer> winningNumbers = new ArrayList<>();
+        for (int i=0; i<LottoRule.WinningNumbers.getSize(); i++) {
+            winningNumbers.add(extractWinningNumber());
+        }
+
+        return winningNumbers;
+    }
+
+    private void putBalls() {
+        for (int i=1; i<=LottoRule.AllTheNumbers.getSize(); i++) {
             balls.add(i);
         }
     }
 
-    public void mixBalls() {
+    private void mixBalls() {
         Collections.shuffle(balls);
     }
 
-    public int pickWinningNumber() {
+    private int extractWinningNumber() {
         return balls.remove(0);
     }
 }
