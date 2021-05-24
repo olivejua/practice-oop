@@ -1,7 +1,18 @@
 package dev.olivejua.practiceoop.lotto;
 
-public class VendingMachine extends ExtractingNumberMachine {
+public class StoreMachine extends ExtractingNumberMachine {
 
+    public int[] getOnlyBonusNumber() {
+        int[] results = new int[LottoRule.SizeOfNumbers.Bonus.getSize()];
+
+        for (int i=0; i<results.length; i++) {
+            results[i] = extractNumber();
+        }
+
+        return results;
+    }
+
+    @Override
     public LottoNumberForm getLottoNumber() {
         // 숫자들을 기계에 넣는다.
         putBalls();
@@ -15,5 +26,4 @@ public class VendingMachine extends ExtractingNumberMachine {
 
         return new LottoNumberForm(winningNumbers, bonusNumbers);
     }
-
 }

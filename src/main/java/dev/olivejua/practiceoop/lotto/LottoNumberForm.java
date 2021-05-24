@@ -1,10 +1,10 @@
 package dev.olivejua.practiceoop.lotto;
 
-public class WinningNumber {
+public class LottoNumberForm {
     private int[] regular;
     private int[] bonus;
 
-    public WinningNumber(int[] winningNumbers, int[] bonusNumber) {
+    public LottoNumberForm(int[] winningNumbers, int[] bonusNumber) {
         this.regular = winningNumbers;
         this.bonus = bonusNumber;
     }

@@ -11,10 +11,10 @@ public class MachineTest {
     @Test
     void extractRightSizeOfBalls() {
         VendingMachine machine = new VendingMachine();
-        WinningNumber winningNumber = machine.getWinningNumber();
+        LottoNumberForm lottoNumberForm = machine.getLottoNumber();
 
-        assertEquals(LottoRule.SizeOfNumbers.Winning.getSize(), winningNumber.getRegular().length);
-        assertEquals(LottoRule.SizeOfNumbers.Bonus.getSize(), winningNumber.getBonus().length);
+        assertEquals(LottoRule.SizeOfNumbers.REGULAR.getSize(), lottoNumberForm.getRegular().length);
+        assertEquals(LottoRule.SizeOfNumbers.Bonus.getSize(), lottoNumberForm.getBonus().length);
     }
 
     private boolean equalsBalls(List<Integer> expected, List<Integer> actual) {
