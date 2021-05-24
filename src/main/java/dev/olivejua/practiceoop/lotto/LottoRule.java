@@ -3,7 +3,7 @@ package dev.olivejua.practiceoop.lotto;
 public class LottoRule {
     enum SizeOfNumbers {
         Total(45),
-        Winning(6),
+        REGULAR(6),
         Bonus(1);
 
         private final int SIZE;
