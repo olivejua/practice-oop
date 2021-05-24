@@ -2,9 +2,9 @@ package dev.olivejua.practiceoop.lotto;
 
 public class WinningNumber {
     private int[] regular;
-    private int bonus;
+    private int[] bonus;
 
-    public WinningNumber(int[] winningNumbers, int bonusNumber) {
+    public WinningNumber(int[] winningNumbers, int[] bonusNumber) {
         this.regular = winningNumbers;
         this.bonus = bonusNumber;
     }
@@ -13,7 +13,7 @@ public class WinningNumber {
         return regular;
     }
 
-    public int getBonus() {
+    public int[] getBonus() {
         return bonus;
     }
 }
