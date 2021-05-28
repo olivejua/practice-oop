@@ -3,5 +3,5 @@ package dev.olivejua.practiceoop.lotto;
 public interface Store {
     OmrCard getOmrCard();
 
-    Lotto buyLotto(OmrCard omrCard);
+    Lotto buyLotto(OmrCard omrCard) throws Exception;
 }

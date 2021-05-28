@@ -1,14 +1,16 @@
 package dev.olivejua.practiceoop.lotto;
 
+import java.util.Optional;
+
 import static dev.olivejua.practiceoop.lotto.LottoRule.*;
 
 public class OmrCard {
     private int[] numbersChosen = new int[SizeOfNumbers.REGULAR.getSize()];
 
-    public boolean isFilledForm() throws WrongOrmCardException {
+    private boolean isFilledForm() {
         for (int number : numbersChosen) {
             if (number == 0 || number > SizeOfNumbers.Total.getSize()) {
-                throw new WrongOrmCardException("You chose wrong numbers in this card.");
+                return false;
             }
         }
 
@@ -21,5 +23,9 @@ public class OmrCard {
         }
 
         this.numbersChosen = numbersChosen;
+    }
+
+    public Optional<int[]> getNumbersChosen() {
+        return Optional.ofNullable(isFilledForm() ? numbersChosen : null);
     }
 }

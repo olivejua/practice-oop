@@ -8,6 +8,12 @@ public abstract class ExtractingNumberMachine implements Machine {
 
     private List<Integer> balls = new ArrayList<>();
 
+    protected ExtractingNumberMachine() {
+        // 숫자들을 기계에 넣는다.
+        putBalls();
+        mixBalls();
+    }
+
     protected int[] fixBalls(int size) {
         int[] results = new int[size];
         for (int i = 0; i< results.length; i++) {

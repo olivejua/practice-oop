@@ -14,10 +14,6 @@ public class StoreMachine extends ExtractingNumberMachine {
 
     @Override
     public LottoNumberForm getLottoNumber() {
-        // 숫자들을 기계에 넣는다.
-        putBalls();
-        mixBalls();
-
         // 당첨번호를 구한다.
         int[] winningNumbers = fixBalls(LottoRule.SizeOfNumbers.REGULAR.getSize());
 

@@ -7,13 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class OmrCardTest {
 
     @Test
-    void isFilledForm1_X() {
-        OmrCard blankOmrCard = new OmrCard();
-        assertThrows(WrongOrmCardException.class, blankOmrCard::isFilledForm);
-    }
-
-    @Test
-    void isFilledForm2_X() {
+    void chooseNumber_X() {
         OmrCard omrCard = new OmrCard();
         assertThrows(WrongOrmCardException.class, () -> omrCard.chooseNumbers(new int[] {1,2,3,4,5,6,7}));
     }
@@ -21,9 +15,17 @@ public class OmrCardTest {
     @Test
     void isFilledForm_O() {
         try {
+            //given
             OmrCard omrCard = new OmrCard();
-            omrCard.chooseNumbers(new int[] {1,2,3,4,5,6});
-            assertTrue(omrCard.isFilledForm());
+            int[] expectedNumbers = {1, 2, 3, 4, 5, 6};
+
+            //when
+            omrCard.chooseNumbers(expectedNumbers);
+            int[] actualNumbers = omrCard.getNumbersChosen().orElse(null);
+
+            //then
+            assertNotNull(actualNumbers);
+            assertEquals(expectedNumbers, actualNumbers);
 
         } catch (WrongOrmCardException e) {
             System.out.println(e.getMessage());

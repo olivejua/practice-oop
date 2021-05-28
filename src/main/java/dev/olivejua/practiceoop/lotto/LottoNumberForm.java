@@ -9,6 +9,12 @@ public class LottoNumberForm {
         this.bonus = bonusNumber;
     }
 
+    public void updateNumbers(int[] regular, int[] bonus) {
+        //TODO validate regular numbers
+        this.regular = regular;
+        this.bonus = bonus;
+    }
+
     public int[] getRegular() {
         return regular;
     }
